@@ -1,0 +1,7 @@
+node_modules/
+example/
+tsconfig.json
+tsconfig.cjs.json
+webpack.config.js
+*.ts
+!*.d.ts

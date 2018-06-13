@@ -1,0 +1,29 @@
+{
+  "name": "simple-create-context",
+  "version": "0.1.0",
+  "description": "react 16 create-context api ponyfill",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "npx tsc -p ./tsconfig.json&&npx tsc -p ./tsconfig.cjs.json",
+    "start": "npx webpack-dev-server"
+  },
+  "typings": "es/index.d.ts",
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^15.6.16",
+    "@types/react-dom": "^15.5.7",
+    "awesome-typescript-loader": "^5.0.0",
+    "clean-webpack-plugin": "^0.1.19",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "typescript": "^2.9.1",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.4",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "tslib": "^1.9.2"
+  }
+}
