@@ -1,4 +1,5 @@
 # simple-create-context
+[![npm version](https://badge.fury.io/js/simple-create-context.svg)](https://badge.fury.io/js/simple-create-context)
 
 > provide createContext api for ReactJS < 16
 

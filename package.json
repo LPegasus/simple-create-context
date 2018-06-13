@@ -1,6 +1,6 @@
 {
   "name": "simple-create-context",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react 16 create-context api ponyfill",
   "main": "index.js",
   "module": "es/index.js",
@@ -11,7 +11,16 @@
     "start": "npx webpack-dev-server"
   },
   "typings": "es/index.d.ts",
-  "author": "",
+  "author": {
+    "name": "Pegasusknight",
+    "email": "pegusas1@hotmail.com"
+  },
+  "repository": {
+    "url": "https://github.com/LPegasus/simple-create-context"
+  },
+  "keywords": [
+    "react", "react < 16", "create context", "ponyfill"
+  ],
   "license": "ISC",
   "devDependencies": {
     "@types/react": "^15.6.16",
