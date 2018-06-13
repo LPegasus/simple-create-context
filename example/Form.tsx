@@ -36,6 +36,6 @@ export default class Form extends React.PureComponent<{
           {formData => <NameFormComponent disabled value={formData.name} onChange={this.handleNameChange} />}
         </FormConsumer>
       </div>
-    )
+    );
   }
 }

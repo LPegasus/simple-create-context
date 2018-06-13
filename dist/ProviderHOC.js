@@ -5,6 +5,9 @@ var react_1 = tslib_1.__importDefault(require("react"));
 var ConsumerHOC_1 = tslib_1.__importDefault(require("./ConsumerHOC"));
 var fakePropTypes_1 = tslib_1.__importDefault(require("./fakePropTypes"));
 var keyUUID = 0;
+function noop() {
+    return 1;
+}
 function default_1(defaultValue) {
     var _a;
     var _b;

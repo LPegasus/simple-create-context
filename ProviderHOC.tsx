@@ -1,10 +1,14 @@
 import React from 'react';
-import ConsumerHOC from './ConsumerHOC';
+import ConsumerHOC, { ConsumerPropTypes } from './ConsumerHOC';
 import fakePropTypes from './fakePropTypes';
 
 let keyUUID: number = 0;
 
-export interface ContextProviderPropTypes<T> { readonly value?: T }
+function noop() {
+  return 1;
+}
+
+export interface ContextProviderPropTypes<T> { readonly value?: T; children?: (value: T) => React.ReactElement<any> }
 
 export default function <T>(defaultValue: T) {
   let uuid = 0;
@@ -71,5 +75,5 @@ export default function <T>(defaultValue: T) {
         return <div>{this.props.children}</div>;
       }
     }
-  }
+  };
 }

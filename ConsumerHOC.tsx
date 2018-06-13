@@ -1,8 +1,10 @@
 import React from 'react';
 import fakePropTypes from './fakePropTypes';
 
+export interface ConsumerPropTypes<T> { children: (value: T) => any }
+
 export default function ConsumerHOC<T>(ctxName: string, defaultValue: T) {
-  return class Consumer extends React.Component<{ children: (value: T) => React.ReactElement<any> | null }> {
+  return class Consumer extends React.Component<ConsumerPropTypes<T>> {
     remove?: () => void;
     static contextTypes = {
       [ctxName]: fakePropTypes,
@@ -22,7 +24,7 @@ export default function ConsumerHOC<T>(ctxName: string, defaultValue: T) {
     }
 
     render() {
-      return this.props.children(this.context[ctxName] !== undefined ? this.context[ctxName] : defaultValue);
+      return this.props.children(this.context[ctxName] !== undefined ? this.context[ctxName] : defaultValue) as React.ReactElement<any>;
     }
   };
 }

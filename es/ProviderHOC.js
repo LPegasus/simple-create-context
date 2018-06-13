@@ -2,6 +2,9 @@ import React from 'react';
 import ConsumerHOC from './ConsumerHOC';
 import fakePropTypes from './fakePropTypes';
 let keyUUID = 0;
+function noop() {
+    return 1;
+}
 export default function (defaultValue) {
     var _a;
     let uuid = 0;

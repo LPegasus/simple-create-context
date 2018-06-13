@@ -1,7 +1,9 @@
 import React from 'react';
+import { ConsumerPropTypes } from './ConsumerHOC';
 import fakePropTypes from './fakePropTypes';
 export interface ContextProviderPropTypes<T> {
     readonly value?: T;
+    children?: (value: T) => React.ReactElement<any>;
 }
 export default function <T>(defaultValue: T): {
     new (props: ContextProviderPropTypes<T>): {
@@ -33,22 +35,16 @@ export default function <T>(defaultValue: T): {
         [x: string]: typeof fakePropTypes;
     };
     createConsumer: () => {
-        new (props?: {
-            children: (value: T) => React.ReactElement<any> | null;
-        } | undefined, context?: any): {
+        new (props?: ConsumerPropTypes<T> | undefined, context?: any): {
             remove?: (() => void) | undefined;
             componentDidMount(): void;
             componentWillUnmount(): void;
-            render(): React.ReactElement<any> | null;
-            setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: {
-                children: (value: T) => React.ReactElement<any> | null;
-            }) => {} | Pick<{}, K>) | Pick<{}, K>, callback?: (() => any) | undefined): void;
+            render(): React.ReactElement<any>;
+            setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: ConsumerPropTypes<T>) => {} | Pick<{}, K>) | Pick<{}, K>, callback?: (() => any) | undefined): void;
             forceUpdate(callBack?: (() => any) | undefined): void;
             props: Readonly<{
                 children?: React.ReactNode;
-            }> & Readonly<{
-                children: (value: T) => React.ReactElement<any> | null;
-            }>;
+            }> & Readonly<ConsumerPropTypes<T>>;
             state: Readonly<{}>;
             context: any;
             refs: {
