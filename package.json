@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "prepublish": "npx tsc -p ./tsconfig.json&&npx tsc -p ./tsconfig.cjs.json",
+    "prepublish": "npm run clear&&npx tsc -p ./tsconfig.json&&npx tsc -p ./tsconfig.cjs.json",
+    "clear": "npx rimraf -g es/ dist/",
     "start": "npx webpack-dev-server"
   },
   "typings": "es/index.d.ts",
